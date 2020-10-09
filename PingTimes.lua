@@ -1,3 +1,6 @@
+-- Require this module from the client and the server
+-- Server can then do PingTimes[Player] to get a player's ping
+
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 
