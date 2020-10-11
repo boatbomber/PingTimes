@@ -7,7 +7,6 @@ local Players = game:GetService("Players")
 local Postie = require(script:WaitForChild("Postie"))
 
 if RunService:IsClient() then
-	
 	-- Handle client end of ping logic
 	
 	Postie.SetCallback("RequestPing", function(GUID)
@@ -17,9 +16,7 @@ if RunService:IsClient() then
 	end)
 	
 	return nil
-	
 else
-	
 	-- Handle server side of ping logic, and expose data
 	
 	local UPDATE_FREQUENCY = 3
@@ -61,7 +58,6 @@ else
 		PingFunc(Player)
 	end)
 
-	
 	return setmetatable({}, {
 		__index = function(tab, key)
 			if typeof(key) == "Instance" and key:IsA("Player") then
@@ -75,5 +71,4 @@ else
 			warn("Cannot set PingTime manually")
 		end;
 	})
-	
 end
